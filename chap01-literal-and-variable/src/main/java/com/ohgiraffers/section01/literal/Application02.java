@@ -9,7 +9,7 @@ public class Application02 {
         System.out.println(2*2);
         System.out.println(123%10);
         System.out.println(2);
-        System.out.println(2 / 0);
+        System.out.println(2 / 2);
 
         System.out.println(0/2);
         System.out.println(123/10);
