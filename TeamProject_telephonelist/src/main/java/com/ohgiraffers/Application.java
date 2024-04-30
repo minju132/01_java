@@ -34,10 +34,25 @@ public class Application {
                     for (int i = 0; i < orders.length; i++) {
                         System.out.println("등록할 번호의 이름을 입력해주세요 : ");
                         String name = sc.nextLine();
+                        if(name.equals("")){
+                            System.out.println("이름을 다시 입력해주세요");
+                            i--;
+                            continue;
+                        }
                         System.out.println("등록할 번호를 입력해주세요 :");
                         String phoneNum = sc.nextLine();
+                        if(phoneNum.equals("")){
+                            System.out.println("전화번호를 다시 입력해주세요");
+                            i--;
+                            continue;
+                        }
                         System.out.println("등록할 번호 주인의 주소를 입력해주세요 : ");
                         String adress = sc.nextLine();
+                        if(adress.equals("")){
+                            System.out.println("주소를 다시 입력해주세요");
+                            i--;
+                            continue;
+                        }
                         orders[i] = new PhoneDTO(name, phoneNum, adress);
                     }
                     result = phoneController.order(orders);
