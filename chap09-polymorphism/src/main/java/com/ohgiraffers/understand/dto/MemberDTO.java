@@ -1,4 +1,4 @@
-package com.ohgiraffers.understand.auth.dto;
+package com.ohgiraffers.understand.dto;
 
 public class MemberDTO {
 
