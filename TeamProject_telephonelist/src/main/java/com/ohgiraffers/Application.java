@@ -39,20 +39,16 @@ public class Application {
                             i--;
                             continue;
                         }
-                        System.out.println("등록할 번호를 입력해주세요 :");
+                        System.out.println("등록할 전화번호만 11자리 입력해주세요 :");
                         String phoneNum = sc.nextLine();
-                        if(phoneNum.equals("")){
-                            System.out.println("전화번호를 다시 입력해주세요");
+                        if(phoneNum.equals("") || phoneNum.length() != 11){
+                            System.out.println("전화번호가 틀렸습니다. 이름부터 다시 입력해주세요");
                             i--;
                             continue;
                         }
                         System.out.println("등록할 번호 주인의 주소를 입력해주세요 : ");
                         String adress = sc.nextLine();
-                        if(adress.equals("")){
-                            System.out.println("주소를 다시 입력해주세요");
-                            i--;
-                            continue;
-                        }
+
                         orders[i] = new PhoneDTO(name, phoneNum, adress);
                     }
                     result = phoneController.order(orders);
@@ -93,7 +89,7 @@ public class Application {
                     break;
             }
 
-            System.out.println(result);     //result 경로 : controller -> service -> repository
+            System.out.println(result);     //result 경로 : controller -> service -> repository -> DB
 
 //            System.out.print("주문을 종료하시겠나요?");
 //            order = sc.nextBoolean();
