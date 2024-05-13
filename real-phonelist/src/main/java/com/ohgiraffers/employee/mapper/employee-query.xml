@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <comment />
+    <entry key="employeeAll">
+        SELECT
+        A.USER_NO,
+        A.USER_NAME,
+        A.USER_ADDRESS,
+        B.CALL_NAME,
+        B.CALL_NUMBER,
+        B.MAIN_CALL
+        FROM USER_INFO A
+        JOIN CALL_NUMBER B ON A.USER_NO = B.USER_NO
+    </entry>
+
+    <entry key="employeeFindByName">
+        SELECT
+        A.USER_NO,
+        A.USER_NAME,
+        A.USER_ADDRESS,
+        B.CALL_NAME,
+        B.CALL_NUMBER,
+        B.MAIN_CALL
+        FROM USER_INFO A
+        JOIN CALL_NUMBER B ON A.USER_NO = B.USER_NO
+        WHERE USER_NAME = ?
+    </entry>
+
+    <entry key="empInsert">
+        INSERT user_info
+        (
+        user_name,
+        user_address
+        )VALUES(
+        ?,
+        ?
+        )
+    </entry>
+
+    <entry key="numInsert">
+        INSERT call_number
+        (
+        user_no,
+        call_name,
+        call_number,
+        main_call
+        )VALUES(
+        LAST_INSERT_ID(),
+        ?,
+        ?,
+        ?
+        )
+    </entry>
+
+    <entry key="bringUser_no">
+        SELECT
+        USER_NO
+        FROM USER_INFO
+        WHERE USER_NAME = ?
+    </entry>
+
+    <entry key="empModify">
+        UPDATE EMPLOYEE
+        SET EMP_NAME = ?
+        WHERE EMP_ID = ?
+    </entry>
+
+</properties>
